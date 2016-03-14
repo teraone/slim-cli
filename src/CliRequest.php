@@ -87,16 +87,13 @@ class CliRequest
         if (isset($argv)) {
 
             $path   = $this->get($argv, 1);
-            $method = $this->get($argv, 2);
-            $params = $this->get($argv, 3);
+            $params = $this->get($argv, 2);
 
-            if (strtoupper($method) === 'GET') {
-                $this->request = \Slim\Http\Request::createFromEnvironment(\Slim\Http\Environment::mock([
-                    'REQUEST_METHOD'    => 'GET',
-                    'REQUEST_URI'       => $this->getUri($path, $params),
-                    'QUERY_STRING'      => $params
-                ]));
-            }
+            $this->request = \Slim\Http\Request::createFromEnvironment(\Slim\Http\Environment::mock([
+                'REQUEST_METHOD'    => 'GET',
+                'REQUEST_URI'       => $this->getUri($path, $params),
+                'QUERY_STRING'      => $params
+            ]));
 
             unset($argv);
         }
