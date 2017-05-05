@@ -1,5 +1,5 @@
 {
-  "name": "pavlakis/slim-cli",
+  "name": "teraone/slim-cli",
   "description": "Making a mock GET request through the CLI and enabling the same application entry point on CLI scripts.",
   "keywords": [
     "slim", "framework", "cli", "middleware"
@@ -12,12 +12,17 @@
       "name": "Antonis Pavlakis",
       "email": "adoni@pavlakis.info",
       "homepage": "http://pavlakis.info"
+    },
+    {
+      "name": "Stefan Gotre",
+      "email": "pool@teraone.de",
+      "homepage": "https://teraone.de"
     }
   ],
   "autoload": {
     "psr-4": {
-      "pavlakis\\cli\\tests\\" : "tests/phpunit",
-      "pavlakis\\cli\\": "src"
+      "teraone\\cli\\tests\\" : "tests/phpunit",
+      "teraone\\cli\\": "src"
     }
   },
   "require": {
