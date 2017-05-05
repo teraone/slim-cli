@@ -10,9 +10,9 @@ composer require pavlakis/slim-cli
 ```
 
 ### Pass the parameters in this order
-`route / method / query string`
+`route / query string`
 ```php
-php public/index.php /status GET event=true
+php public/index.php /status event=true
 ```
 
 ### Add it in the middleware section of your application
