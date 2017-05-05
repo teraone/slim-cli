@@ -3,6 +3,7 @@
 # Slim 3 Framework CLI Request Middleware
 
 This middleware will transform a CLI call into a GET Request.
+It is based on https://github.com/pavlakis/slim-cli but does not use the method paramter.
 
 ### Add it with composer
 ```
