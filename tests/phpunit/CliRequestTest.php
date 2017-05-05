@@ -1,7 +1,7 @@
 <?php
-namespace pavlakis\cli\tests;
+namespace teraone\SlimCli\Tests;
 
-use pavlakis\cli\CliRequest;
+use teraone\SlimCli\CliRequest;
 
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
@@ -20,8 +20,7 @@ class CliRequestTest extends \PHPUnit_Framework_TestCase
 
         $argv[0] = 'cli.php';
         $argv[1] = '/status';
-        $argv[2] = 'GET';
-        $argv[3] = 'event=true';
+        $argv[2] = 'event=true';
     }
 
     /**
