@@ -3,12 +3,12 @@
  * A Slim 3 middleware enabling a mock request to be made through the CLI.
  * Use in the form: php public/index.php /status event=true
  *
- * @link        https://github.com/pavlakis/slim-cli
+ * @link        https://github.com/teraone/slim-cli
  * @copyright   Copyright © 2015-2016 Antonis Pavlakis
  * @author      Bobby DeVeaux (@bobbyjason) Based on Bobby's code from: https://github.com/dvomedia/gulp-skeleton/blob/master/web/index.php
  * @license     https://github.com/pavlakis/slim-cli/blob/master/LICENSE (BSD 3-Clause License)
  */
-namespace teraone\SlimCli;
+namespace Teraone\SlimCli;
 
 
 use Psr\Http\Message\ResponseInterface;
@@ -87,16 +87,15 @@ class CliRequest
         if (isset($argv)) {
 
             $path   = $this->get($argv, 1);
-            $method = $this->get($argv, 2);
-            $params = $this->get($argv, 3);
+            $params = $this->get($argv, 2);
 
-            if (strtoupper($method) === 'GET') {
-                $this->request = \Slim\Http\Request::createFromEnvironment(\Slim\Http\Environment::mock([
-                    'REQUEST_METHOD'    => 'GET',
-                    'REQUEST_URI'       => $this->getUri($path, $params),
-                    'QUERY_STRING'      => $params
-                ]));
-            }
+
+            $this->request = \Slim\Http\Request::createFromEnvironment(\Slim\Http\Environment::mock([
+                'REQUEST_METHOD'    => 'GET',
+                'REQUEST_URI'       => $this->getUri($path, $params),
+                'QUERY_STRING'      => $params
+            ]));
+
 
             unset($argv);
         }

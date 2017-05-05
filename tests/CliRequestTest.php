@@ -1,9 +1,7 @@
 <?php
-namespace teraone\SlimCli\Tests;
+namespace Teraone\SlimCli\Tests;
 
-use teraone\SlimCli\CliRequest;
-
-use Psr\Http\Message\RequestInterface;
+use Teraone\SlimCli\CliRequest;
 use Psr\Http\Message\ResponseInterface;
 use Slim\Http\Body;
 use Slim\Http\Headers;
@@ -11,6 +9,10 @@ use Slim\Http\Request;
 use Slim\Http\Response;
 use Slim\Http\Uri;
 
+/**
+ * Class CliRequestTest
+ * @package teraone\SlimCli\Tests
+ */
 class CliRequestTest extends \PHPUnit_Framework_TestCase
 {
 
@@ -21,6 +23,7 @@ class CliRequestTest extends \PHPUnit_Framework_TestCase
         $argv[0] = 'cli.php';
         $argv[1] = '/status';
         $argv[2] = 'event=true';
+
     }
 
     /**
@@ -62,7 +65,7 @@ class CliRequestTest extends \PHPUnit_Framework_TestCase
             return $res;
         };
 
-        unset($GLOBALS['argv'][3]);
+        unset($GLOBALS['argv'][2]);
 
         /** @var CliRequest $cliRequest */
         $cliRequest = new CliRequest();
@@ -111,7 +114,7 @@ class CliRequestTest extends \PHPUnit_Framework_TestCase
 
     public function testRequestWhenNoParamsArePassed()
     {
-        unset($GLOBALS['argv'][3]);
+        unset($GLOBALS['argv'][2]);
 
         $req = $this->requestFactory();
         $res = new Response();

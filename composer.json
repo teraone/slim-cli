@@ -4,7 +4,7 @@
   "keywords": [
     "slim", "framework", "cli", "middleware"
   ],
-  "homepage": "http://github.com/pavlakis/slim-cli",
+  "homepage": "http://github.com/teraone/slim-cli",
   "type": "library",
   "license": "BSD-3-Clause",
   "authors": [
@@ -21,8 +21,12 @@
   ],
   "autoload": {
     "psr-4": {
-      "teraone\\cli\\tests\\" : "tests/phpunit",
-      "teraone\\cli\\": "src"
+      "Teraone\\SlimCli\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Teraone\\SlimCli\\Tests\\" : "tests/phpunit"
     }
   },
   "require": {

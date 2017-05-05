@@ -6,7 +6,7 @@ This middleware will transform a CLI call into a GET Request.
 
 ### Add it with composer
 ```
-composer require pavlakis/slim-cli
+composer require teraone/slim-cli
 ```
 
 ### Pass the parameters in this order
@@ -17,14 +17,14 @@ php public/index.php /status event=true
 
 ### Add it in the middleware section of your application
 ```
-$app->add(new \pavlakis\cli\CliRequest());
+$app->add(new \Teraone\SlimCli\CliRequest());
 ```
 
 ### Pass a route to test it with
 
 ```php
 
-$app->get('/status', 'PHPMinds\Action\EventStatusAction:dispatch')
+$app->get('/status', 'YourNameSpace\YourController:yourMethod')
     ->setName('status');
 
 ```
@@ -32,11 +32,11 @@ $app->get('/status', 'PHPMinds\Action\EventStatusAction:dispatch')
 ### Check you're only using a CLI call
 
 ```php
-final class EventStatusAction
+final class YourController
 {
     ...
 
-    public function dispatch(Request $request, Response $response, $args)
+    public function yourMethod(Request $request, Response $response, $args)
     {
 
         // ONLY WHEN CALLED THROUGH CLI
